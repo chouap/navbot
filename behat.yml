@@ -1,0 +1,18 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            goutte: ~
+            sessions:
+                my_session:
+                    symfony2: ~
+            browser_name:       firefox                 # Use firefox when running test via the selenium driver
+            javascript_session: selenium2               # Use selenium driver with javascript scenarios
+            selenium2: ~
+    suites:
+        test_suite:
+            type: symfony_bundle
+            bundle: 'BangNavbotBundle'
+            contexts:
+            - \Bang\Bundle\NavbotBundle\Features\Context\FeatureContext:
+                container:   '@service_container'

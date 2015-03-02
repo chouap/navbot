@@ -1,0 +1,5 @@
+bang_navbot:
+    resource: "@BangNavbotBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
